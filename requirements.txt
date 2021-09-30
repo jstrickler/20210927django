@@ -1,0 +1,7 @@
+Django
+django-environ
+django-debug-toolbar
+django-extensions
+django-filter
+pytest-django
+cookiecutter
