@@ -4,7 +4,17 @@ from django.contrib import admin
 
 from superheroes.models import Superhero, Power, Enemy, City # <1>
 
-admin.site.register(Superhero)  # <2>
+class SuperheroAdmin(admin.ModelAdmin):
+    search_fields = ['name', 'real_name', 'secret_identity']
+    empty_value_display = '**NADA**'
+
+admin.site.register(Superhero, SuperheroAdmin)  # <2>
 admin.site.register(City) # <2>
 admin.site.register(Enemy) # <2>
-admin.site.register(Power) # <2>
+
+class PowerAdmin(admin.ModelAdmin):
+    search_fields = ['name', 'description']
+
+
+admin.site.register(Power, PowerAdmin) # <2>
+

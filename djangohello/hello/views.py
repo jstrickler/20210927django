@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def hello(request):
-    return HttpResponse("Hello from my Django app")
+    return HttpResponse("<h1>Hello from my Django app</h1>")
 
 def thing1(request):
     return HttpResponse("Hello from the first thing")

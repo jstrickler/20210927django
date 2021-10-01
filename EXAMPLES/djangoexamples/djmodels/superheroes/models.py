@@ -7,6 +7,17 @@ class Power(models.Model):
     def __str__(self):
         return self.name
 
+# for DB views...
+class Spam(models.Model):
+    id = models.IntegerField()
+    barf = models.CharField(max_length=16)
+    blub = models.IntegerField()
+    grutz = models.ForeignKey('OtherTable', on_delete=models.DO_NOTHING)
+
+    class Meta:
+        managed=False
+        db_table = 'name_of_actual_view'
+
 class City(models.Model):
     name = models.CharField(max_length=32, unique=True)
 

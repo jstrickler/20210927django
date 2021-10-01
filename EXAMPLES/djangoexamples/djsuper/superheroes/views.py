@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 from .models import Superhero
 
 def home(request):
@@ -8,7 +9,7 @@ def home(request):
     :param request: HTTP request
     :return: HTTP Response with displayable text
     """
-    return HttpResponse("Welcome to the superhero app")
+    return HttpResponse("<h1>Welcome to the superhero app</h1>")
 
 def hero(request, hero_name):
     """
@@ -18,8 +19,9 @@ def hero(request, hero_name):
     :param hero_name: name of hero (str)
     :return: HTTP Response with displayable text
     """
-    s = Superhero.objects.get(name=hero_name)
+    s = get_object_or_404(Superhero, name=hero_name)
+
     return HttpResponse(
-        "{} is really {}".format(s.secret_identity, s.name)
+        "{} is really {} WOW!".format(s.secret_identity, s.name)
     )
 

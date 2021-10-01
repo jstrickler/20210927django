@@ -19,8 +19,10 @@ from hello import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', include('hello.urls')),
+    path('hello', include('hello.urls')),
     path('goodbye/', include('goodbye.urls')),
+
+    # not the best practice:
     path('wombat', views.thing1),
     path('kangaroo', views.thing2),
 ]

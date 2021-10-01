@@ -30,6 +30,13 @@ print()
 
 
 def find_term(term, *file_names):
+    """
+    Print all lines of specified files which contain specified string.
+
+    :param term: search term
+    :param file_names: one or more file paths
+    :return: None
+    """
     for file_name in file_names:
         short_name = os.path.basename(file_name)
         with open(file_name) as file_in:

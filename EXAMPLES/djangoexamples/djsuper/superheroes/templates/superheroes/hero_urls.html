@@ -8,7 +8,7 @@
 
 {% for hero in superheroes %}
 <h3>
-    <a href="{% url 'superheroes:herodetails' hero.name  %}">{{ hero.name }}</a>
+        <a href="{% url 'superheroes:herodetails' hero.name  %}">{{ hero.name }}</a>
 </h3>
 {% endfor %}
 
